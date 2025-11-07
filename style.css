@@ -22,6 +22,9 @@ body {
   font-size: 2.5rem;
   animation: aparecer 2s ease-in-out;
   text-shadow: 2px 2px 5px #00000055;
+  white-space: nowrap;        /* ✅ Evita saltos de línea */
+  overflow: hidden;           /* Oculta desbordes si no cabe */
+  text-overflow: ellipsis;    /* Opcional: pone "..." si no cabe */
 }
 
 .tarjeta {
