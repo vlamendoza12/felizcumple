@@ -14,9 +14,7 @@ window.addEventListener('load', () => {
       y: Math.random() * confetti.height - confetti.height,
       r: Math.random() * 6 + 4,
       d: Math.random() * 100,
-      color: `hsl(${Math.random() * 360},100%,50%)`,
-      tilt: Math.random() * 10 - 10,
-      tiltAngle: 0,
+      color: `hsl(${Math.random() * 360},100%,50%)`
     };
   }
 
@@ -40,14 +38,12 @@ window.addEventListener('load', () => {
   }
 
   dibujar();
-  musica.play().catch(() => console.log('Esperando interacción para reproducir música'));
 
-  document.getElementById('btnCompartir').addEventListener('click', () => {
-    const mensaje = encodeURIComponent('🎂 ¡Feliz Cumpleaños! 🎉 Abre este enlace 👉 ' + window.location.href);
-    window.open(`https://wa.me/?text=${mensaje}`, '_blank');
-  });
-
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
+  // Intentar reproducir música al cargar
+  musica.volume = 0.5;
+  const playMusic = () => {
+    musica.play().catch(() => {});
+    document.body.removeEventListener('click', playMusic);
+  };
+  document.body.addEventListener('click', playMusic);
 });
