@@ -14,38 +14,52 @@ body {
   text-align: center;
   z-index: 2;
   position: relative;
+  max-width: 700px;
+  padding: 20px;
 }
 
 .titulo {
-  font-size: 3rem;
+  font-size: 2.5rem;
   animation: aparecer 2s ease-in-out;
+  text-shadow: 2px 2px 5px #00000055;
+}
+
+.tarjeta {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px #00000033;
+  animation: aparecer 3s ease-in-out;
+}
+
+.imagen-avion {
+  width: 120px;
+  margin-bottom: 15px;
+  animation: flotar 3s ease-in-out infinite;
 }
 
 .mensaje {
   font-size: 1.2rem;
-  margin-top: 10px;
-  animation: aparecer 3s ease-in-out;
+  line-height: 1.6;
 }
 
-#btnCompartir {
-  background-color: #25D366;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-#btnCompartir:hover {
-  background-color: #1da851;
+.nota {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-style: italic;
 }
 
 @keyframes aparecer {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 canvas#confetti {
