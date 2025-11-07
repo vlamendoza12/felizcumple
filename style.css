@@ -27,6 +27,12 @@ body {
   text-overflow: ellipsis;    /* Opcional: pone "..." si no cabe */
 }
 
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 1.8rem;   /* un poco más pequeño en pantallas estrechas */
+  }
+}
+
 .tarjeta {
   background: rgba(255,255,255,0.15);
   border-radius: 20px;
